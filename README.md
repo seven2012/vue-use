@@ -48,14 +48,14 @@ $ cd push
 、、、、、、、、
 -----------------------------------------------------------------------------------------------------------------------------------
 方方的方案
-npm init-y//默认选项是yes+安装npm初始化
-npm init //生成一个package.json
+- npm init-y//默认选项是yes+安装npm初始化
+- npm init //生成一个package.json
 
 git add . 一下，标注进行了npm init
 
 下面安装vue使用的命令行工具
-npm install -g vue-cli //相当于把webpackage的相关包都装好了
-npm init webpack .  //显示如下
+- npm install -g vue-cli //相当于把webpackage的相关包都装好了
+- vue init webpack .  //显示如下
 zqq@asus MINGW64 ~/desktop/vue-practice/vue-use (master)
 $ vue init webpack .
 
@@ -86,5 +86,5 @@ $ vue init webpack .
 
    Documentation can be found at https://vuejs-templates.github.io/webpack
 下一步，按照 提示分别执行
-npm install
-npm run dev
+- npm install
+- npm run dev
