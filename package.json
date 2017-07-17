@@ -1,0 +1,20 @@
+{
+  "name": "vue-use",
+  "version": "1.0.0",
+  "description": "引入开发版本vue.js到自己的项目中 cli命令行安装npm包方式，可同时监测项目及本地静态服务器测试 步骤： # 全局安装 vue-cli $ npm install --global vue-cli # 创建一个基于 webpack 模板的新项目 $ vue init webpack my-project # 安装依赖，走你 $ cd my-project $ npm install $ npm run dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seven2012/vue-use.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seven2012/vue-use/issues"
+  },
+  "homepage": "https://github.com/seven2012/vue-use#readme"
+}
