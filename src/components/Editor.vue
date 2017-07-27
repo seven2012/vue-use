@@ -50,16 +50,16 @@
                 <WorkHistoryEditor v-bind:workHistory="workHistory" />
             </li>
             <li v-bind:class="{active:currentTab === 2}">
-                <h2>学习经历</h2>
+                <StudyHistoryEditor v-bind:studyHistory="studyHistory" />
             </li>
             <li v-bind:class="{active:currentTab === 3}">
-                <h2>项目经历</h2>
+                <ProjectHistoryEditor v-bind:projectHistory="projectHistory" />
             </li>
             <li v-bind:class="{active:currentTab === 4}">
-                <h2>获奖情况</h2>
+                <RewardsEditor v-bind:rewardsEditor="rewardsEditor" />
             </li>
             <li v-bind:class="{active:currentTab === 5}">
-                <h2>联系方式</h2>
+                <ContactEditor v-bind:contact="contact" />
             </li>
         </ol>
     </div>
@@ -68,8 +68,13 @@
 <script>
 import ProfileEditor from './ProfileEditor'
 import WorkHistoryEditor from './WorkHistoryEditor'
+import StudyHistoryEditor from './StudyHistoryEditor'
+import ProjectHistoryEditor from './ProjectHistoryEditor'
+import RewardsEditor from './RewardsEditor'
+import ContactEditor from './ContactEditor'
+
 export default {
-    components:{ ProfileEditor,WorkHistoryEditor },
+    components:{ ProfileEditor,WorkHistoryEditor,StudyHistoryEditor,ProjectHistoryEditor,RewardsEditor,ContactEditor },
     data() {
         return {
             currentTab: 0,
@@ -85,7 +90,33 @@ export default {
                     content: '',
                     time: ''
                 },
-            ]
+            ],
+            studyHistory: [
+                {
+                    school: '',
+                    degree: '',
+                    time: ''
+                },
+            ],
+            projectHistory: [
+                {
+                    name: '',
+                    show: '',
+                    detail: ''
+                },
+            ],
+            rewardsEditor: [
+                {
+                    name: '',
+                    time: ''
+                },
+            ],
+            contact: {
+                phone: '',
+                email: '',
+                QQ: '',
+                address:''
+            }
         }
     },
     created() {
@@ -136,7 +167,7 @@ export default {
             &.active {
                 display: block;
             }
-            .work-container {
+            .item-container {
                 position: relative;
                 >.el-icon-circle-close{
                     position:absolute;
