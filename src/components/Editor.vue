@@ -2,64 +2,31 @@
     <div id="editor-resume">
         <nav>
             <ol>
-                <li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active: currentTab === i}" v-on:click="currentTab = i">
+                <li v-for="i in [0,1,2,3,4,5]" v-bind:key='i.id' v-bind:class="{active: currentTab === i}" v-on:click="currentTab=i">
                     <svg class="icon">
                         <use v-bind:xlink:href="`#icon-${icons[i]}`"></use>
                     </svg>
                 </li>
-                <!--<li v-bind:class="{active:currentTab === 0}" v-on:click="currentTab = 0">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-id1"></use>
-                                    </svg>
-                                </li>
-                                <li v-bind:class="{active:currentTab === 1}" v-on:click="currentTab = 1">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-works2"></use>
-                                    </svg>
-                                </li>
-                                <li v-bind:class="{active:currentTab === 2}" v-on:click="currentTab = 2">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-study3"></use>
-                                    </svg>
-                                </li>
-                                <li v-bind:class="{active:currentTab === 3}" v-on:click="currentTab = 3">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-project4"></use>
-                                    </svg>
-                                </li>
-                                <li v-bind:class="{active:currentTab === 4}" v-on:click="currentTab = 4">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-rewards5"></use>
-                                    </svg>
-                                </li>
-                                <li v-bind:class="{active:currentTab === 5}" v-on:click="currentTab = 5">
-                                    <svg class="icon">
-                                        <use xlink:href="#icon-telephone6"></use>
-                                    </svg>
-                                </li>-->
             </ol>
         </nav>
         <ol class="panes">
-            <!--<li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active:currentTab === i}">
-                                content{{i+1}}
-                            </li>-->
             <li v-bind:class="{active:currentTab === 0}">
-                <ProfileEditor v-bind:profile="profile" />
+                <ProfileEditor v-bind:profile="resume.profile" />
             </li>
-            <li v-bind:class="{active:currentTab === 1}">
-                <WorkHistoryEditor v-bind:workHistory="workHistory" />
+            <li v-bind:class="{active:currentTab === 1}">           
+                <ArrayEditor v-bind:items="resume.workHistory" v-bind:labels="{company:'公司名称',content:'工作内容',time:'时间'}" v-bind:title="'工作经历'" />
             </li>
             <li v-bind:class="{active:currentTab === 2}">
-                <StudyHistoryEditor v-bind:studyHistory="studyHistory" />
+                <ArrayEditor v-bind:items="resume.studyHistory" v-bind:labels="{school:'学校名称',degree:'学位',time:'时间'}" v-bind:title="'学习经历'" />
             </li>
             <li v-bind:class="{active:currentTab === 3}">
-                <ProjectHistoryEditor v-bind:projectHistory="projectHistory" />
+                <ArrayEditor v-bind:items="resume.projectHistory" v-bind:labels="{name:'项目名称',show:'功能实现',detail:'技术细节'}" title="项目经历" />
             </li>
             <li v-bind:class="{active:currentTab === 4}">
-                <RewardsEditor v-bind:rewardsEditor="rewardsEditor" />
+                <ArrayEditor v-bind:items="resume.rewardsEditor" v-bind:labels="{name:'所获奖项',time:'获奖时间'}" title="获奖情况" />
             </li>
             <li v-bind:class="{active:currentTab === 5}">
-                <ContactEditor v-bind:contact="contact" />
+                <ContactEditor v-bind:contact="resume.contact" />
             </li>
         </ol>
     </div>
@@ -67,56 +34,16 @@
 
 <script>
 import ProfileEditor from './ProfileEditor'
-import WorkHistoryEditor from './WorkHistoryEditor'
-import StudyHistoryEditor from './StudyHistoryEditor'
-import ProjectHistoryEditor from './ProjectHistoryEditor'
-import RewardsEditor from './RewardsEditor'
+import ArrayEditor from './ArrayEditor'
 import ContactEditor from './ContactEditor'
 
 export default {
-    components:{ ProfileEditor,WorkHistoryEditor,StudyHistoryEditor,ProjectHistoryEditor,RewardsEditor,ContactEditor },
+    components:{ ProfileEditor,ArrayEditor,ContactEditor },
+    props:['resume'],
     data() {
         return {
             currentTab: 0,
-            icons: ['id1', 'works2', 'study3', 'project4', 'rewards5', 'telephone6'],
-            profile: {
-                name: '',
-                birth: '',
-                city: ''
-            },
-            workHistory: [
-                {
-                    company: '',
-                    content: '',
-                    time: ''
-                },
-            ],
-            studyHistory: [
-                {
-                    school: '',
-                    degree: '',
-                    time: ''
-                },
-            ],
-            projectHistory: [
-                {
-                    name: '',
-                    show: '',
-                    detail: ''
-                },
-            ],
-            rewardsEditor: [
-                {
-                    name: '',
-                    time: ''
-                },
-            ],
-            contact: {
-                phone: '',
-                email: '',
-                QQ: '',
-                address:''
-            }
+            icons: ['id1', 'works2', 'study3', 'project4', 'rewards5', 'telephone6'],     
         }
     },
     created() {
@@ -173,6 +100,9 @@ export default {
                     position:absolute;
                     right:0;
                     top:0;
+                }
+                >hr{
+                    opacity: 0.2;
                 }
             }
         }

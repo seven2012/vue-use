@@ -9,7 +9,7 @@
         </div>
         <div class="status">
             <el-button type="primary">保存</el-button>
-            <el-button>预览</el-button>
+            <el-button v-on:click="preview">预览</el-button>
         </div>
     </div>
 </template>
@@ -32,3 +32,13 @@
     }
 }
 </style>
+
+<script>
+export default {
+  methods:{
+      preview(){
+          this.$emit('preview')
+      }
+  }
+}
+</script>
