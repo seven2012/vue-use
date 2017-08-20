@@ -99,20 +99,21 @@ body,
     border-radius: 4px;
   }
 }
-  .previewMode>#topbar-resume {
+#app.previewMode>#topbar-resume {
     display: none;
   }
-  .previewMode #editor-resume {
+  
+#app.previewMode #editor-resume {
     display: none;
   }
-  .previewMode #preview-resume {
+#app.previewMode #preview-resume {
     max-width: 800px;
     margin: 16px auto;
   }
-  #exitPreview {
+#app#exitPreview {
     display: none;
   }
-  .previewMode #exitPreview {
+#app.previewMode #exitPreview {
     display: inline-block;
     position: fixed;
     right: 16px;
