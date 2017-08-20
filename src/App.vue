@@ -97,23 +97,23 @@ body,
     margin: 16px 16px 16px 8px;
     background: #fff;
     border-radius: 4px;
+    margin:16px auto;
   }
 }
-#app.previewMode>#topbar-resume {
+.previewMode #topbar-resume {
     display: none;
   }
   
-#app.previewMode #editor-resume {
+.previewMode #editor-resume {
     display: none;
   }
-#app #preview-resume {
+.previewMode #preview-resume {
     max-width: 800px;
-    margin: 16px auto;
   }
-#app#exitPreview {
+.previewMode #exitPreview {
     display: none;
   }
-#app.previewMode #exitPreview {
+.previewMode #exitPreview {
     display: inline-block;
     position: fixed;
     right: 16px;
