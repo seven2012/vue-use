@@ -97,8 +97,6 @@ body,
     margin: 16px 16px 16px 8px;
     background: #fff;
     border-radius: 4px;
-    margin:16px auto;
-    max-width:700px;
   }
 }
 .previewMode #topbar-resume {
@@ -108,10 +106,14 @@ body,
 .previewMode #editor-resume {
     display: none;
   }
-.previewMode #exitPreview {
+#app #exitPreview {
     display: none;
   }
-.previewMode #exitPreview {
+#app.previewMode main #preview-resume{
+    margin:16px auto;
+    max-width:700px;
+}
+#app.previewMode #exitPreview {
     display: inline-block;
     position: fixed;
     right: 16px;
