@@ -172,3 +172,13 @@ export default {
 }
 </style>
 >>>>>>> 1e0808ffe2316dd2a73d758c6d82aed8013ebc26
+
+
+#如何发布代码
+
+npm run build打包代码，生成dist文件夹
+在index.js里更改成正确的路径 如此例：assetsPublicPath: '/vue-use/dist/',
+把.gitignore里的dist目录去掉，就能上传到github显示了
+git add .
+git commit .
+发布代码后生成预览页面，其后接上正确的路径如上https://seven2012.github.io/vue-use/dist/
