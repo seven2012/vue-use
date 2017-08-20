@@ -19,22 +19,22 @@ export default {
   },
   data() {
     return {
-      previewMode:false,
+      previewMode: false,
       resume: {
-        profile: {name: '',birth: '',city: ''},
-        workHistory: [{ company: '',content: '', time: '' },],
-        studyHistory: [{school: '',degree: '',time: '' },],
-        projectHistory: [{ name: '', show: '',detail: ''},],
-        rewardsEditor: [ { name: '',time: ''}, ],
-        contact: {phone: '',email: '',QQ: '',address: ''}
+        profile: { name: '', birth: '', city: '' },
+        workHistory: [{ company: '', content: '', time: '' },],
+        studyHistory: [{ school: '', degree: '', time: '' },],
+        projectHistory: [{ name: '', show: '', detail: '' },],
+        rewardsEditor: [{ name: '', time: '' },],
+        contact: { phone: '', email: '', QQ: '', address: '' }
       }
     }
   },
-  methods:{
-    preview(){
+  methods: {
+    preview() {
       this.previewMode = true
     },
-    exitPreview(){
+    exitPreview() {
       this.previewMode = false
     }
   }
@@ -74,7 +74,7 @@ body,
   overflow: hidden;
 }
 
-main {
+#app main {
   display: flex;
   flex: 1;
   background: #fafafa;
@@ -99,23 +99,24 @@ main {
     border-radius: 4px;
   }
 }
-.previewMode > #topbar-resume{
-  display: none;
-}
-.previewMode #editor-resume{
-  display:none;
-}
-.previewMode #preview-resume{
-  max-width:800px;
-  margin:16px auto;
-}
-#exitPreview{
-  display:none;
-}
-.previewMode #exitPreview{
-  display:inline-block;
-  position:fixed;
-  right:16px;
-  bottom:16px;
-}
+  .previewMode>#topbar-resume {
+    display: none;
+  }
+  .previewMode #editor-resume {
+    display: none;
+  }
+  .previewMode #preview-resume {
+    max-width: 800px;
+    margin: 16px auto;
+  }
+  #exitPreview {
+    display: none;
+  }
+  .previewMode #exitPreview {
+    display: inline-block;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+  }
+
 </style>
