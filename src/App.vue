@@ -106,7 +106,7 @@ body,
 #app.previewMode #editor-resume {
     display: none;
   }
-#app.previewMode #preview-resume {
+#app #preview-resume {
     max-width: 800px;
     margin: 16px auto;
   }
