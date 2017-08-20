@@ -98,6 +98,7 @@ body,
     background: #fff;
     border-radius: 4px;
     margin:16px auto;
+    max-width:700px;
   }
 }
 .previewMode #topbar-resume {
@@ -106,9 +107,6 @@ body,
   
 .previewMode #editor-resume {
     display: none;
-  }
-.previewMode #preview-resume {
-    max-width: 800px;
   }
 .previewMode #exitPreview {
     display: none;
